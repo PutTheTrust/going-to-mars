@@ -46,6 +46,12 @@ const rootReducer = (state = initialState, action) => {
         tasks: newTasks,
       };
 
+    case "REMOVE_ALL":
+      return {
+        ...state,
+        tasks: [],
+      };
+
     default:
       return state;
   }
