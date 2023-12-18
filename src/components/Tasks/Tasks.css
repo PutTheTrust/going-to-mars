@@ -12,6 +12,7 @@
 }
 
 .tasks__table {
+  margin-top: 16px;
   /* border-collapse: collapse; */
   table-layout: fixed;
   width: 100%;
