@@ -1,0 +1,9 @@
+.hero {
+  /* margin-top: 20px; */
+}
+
+.hero__img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
