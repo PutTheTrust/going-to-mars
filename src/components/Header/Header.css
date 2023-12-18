@@ -1,0 +1,11 @@
+.header {
+  background-color: var(--primary);
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__title {
+  color: var(--dark);
+}
