@@ -1,0 +1,25 @@
+.tasks {
+  /* margin-left: 240px;
+  margin-top: 16px;
+  margin-bottom: 40px; */
+
+  margin: 16px 20px 40px 240px;
+}
+
+.task__btnContainer {
+  display: flex;
+  justify-content: end;
+}
+
+.tasks__table {
+  /* border-collapse: collapse; */
+  table-layout: fixed;
+  width: 100%;
+  /* border: 1px solid #ddd; */
+  overflow: scroll;
+}
+
+.tasks__table-actions {
+  display: inline-flex;
+  gap: 16px;
+}
