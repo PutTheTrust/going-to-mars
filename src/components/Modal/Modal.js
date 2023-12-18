@@ -1,6 +1,8 @@
 import { useState } from "react";
 import GMButton from "../GMButton/GMButton";
 import GMInput from "../GMInput/GMInput";
+
+import close from "../../assets/icon-close.svg";
 import "./Modal.css";
 
 const Modal = ({ setIsOpen }) => {
@@ -9,8 +11,14 @@ const Modal = ({ setIsOpen }) => {
   const [creator, setCreator] = useState("");
   const [assigned, setAssigned] = useState("");
   return (
-    <div className="modal" onClick={setIsOpen}>
+    <div className="modal">
       <div className="modal__content">
+        <div className="modal__content-btn">
+          <button onClick={setIsOpen}>
+            <img src={close} alt="close" />
+          </button>
+        </div>
+
         <h2>Create Task</h2>
 
         <hr />
