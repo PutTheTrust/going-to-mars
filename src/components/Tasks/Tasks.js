@@ -1,39 +1,15 @@
-import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { removeTask } from "../../redux/actions";
 
-import "./Tasks.css";
 import GMButton from "../GMButton/GMButton";
 
+import "./Tasks.css";
+import deleteIcon from "../../assets/icon-trash.svg";
+import editIcon from "../../assets/icon-edit.svg";
+
 const Tasks = () => {
-  const taskList = [
-    {
-      id: 1,
-      title: "maintain space rover",
-      description: "Clean the wheels and check rover electonics",
-      createdBy: "Elon",
-      assignedTo: "Rob",
-    },
-    {
-      id: 2,
-      title: "maintain space rover",
-      description: "Clean the wheels and check rover electonics",
-      createdBy: "Professor",
-      assignedTo: "Fry",
-    },
-    {
-      id: 3,
-      title: "maintain space rover",
-      description: "Clean the wheels and check rover electonics",
-      createdBy: "Zap",
-      assignedTo: "Leela",
-    },
-    {
-      id: 4,
-      title: "maintain space rover",
-      description: "Clean the wheels and check rover electonics",
-      createdBy: "Bender",
-      assignedTo: "Zoidberg",
-    },
-  ];
+  const dispatch = useDispatch();
+  const tasks = useSelector((state) => state.tasks);
 
   return (
     <div className="tasks">
@@ -54,15 +30,20 @@ const Tasks = () => {
             </tr>
           </thead>
           <tbody>
-            {taskList.map((task) => (
+            {tasks.map((task) => (
               <tr key={task.id}>
                 <td>{task.id}</td>
                 <td>{task.title}</td>
                 <td>{task.createdBy}</td>
                 <td>{task.assignedTo}</td>
                 <td className="tasks__table-actions">
-                  <GMButton text="update" />
-                  <GMButton text="delete" />
+                  <GMButton text="update" image={editIcon} colour={"green"} />
+                  <GMButton
+                    text="delete"
+                    onClick={() => dispatch(removeTask(task.id))}
+                    image={deleteIcon}
+                    colour="red"
+                  />
                 </td>
               </tr>
             ))}
