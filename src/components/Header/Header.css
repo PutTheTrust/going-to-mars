@@ -4,6 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  /* Sets botttom, top, left, right to zero */
+  inset: 0;
 }
 
 .header__title {
