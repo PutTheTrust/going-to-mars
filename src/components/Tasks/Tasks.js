@@ -8,11 +8,21 @@ import Modal from "../Modal/Modal";
 import "./Tasks.css";
 import deleteIcon from "../../assets/icon-trash.svg";
 import editIcon from "../../assets/icon-edit.svg";
+import UpdateModal from "../UpdateModal/UpdateModal";
 
 const Tasks = () => {
-  const [isOpen, setIsOpen] = useState();
+  const [isOpen, setIsOpen] = useState(false);
+  const [isUpdateOpen, setIsUpdateOpen] = useState(false);
+  const [selectedId, setSelectedId] = useState(false);
+
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks);
+
+  const handleUpdateTask = (id) => {
+    setIsUpdateOpen(true);
+    // console.log(id);
+    setSelectedId(id);
+  };
 
   return (
     <>
@@ -41,7 +51,12 @@ const Tasks = () => {
                   <td>{task.createdBy}</td>
                   <td>{task.assignedTo}</td>
                   <td className="tasks__table-actions">
-                    <GMButton text="update" image={editIcon} colour={"green"} />
+                    <GMButton
+                      text="update"
+                      onClick={() => handleUpdateTask(task.id)}
+                      image={editIcon}
+                      colour={"green"}
+                    />
                     <GMButton
                       text="delete"
                       onClick={() => dispatch(removeTask(task.id))}
@@ -58,6 +73,9 @@ const Tasks = () => {
 
       {/* Only show modal if isOpen is true */}
       {isOpen && <Modal setIsOpen={() => setIsOpen(false)} />}
+      {isUpdateOpen && (
+        <UpdateModal setIsOpen={() => setIsUpdateOpen(false)} id={selectedId} />
+      )}
     </>
   );
 };

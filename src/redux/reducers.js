@@ -14,20 +14,6 @@ const initialState = {
       createdBy: "Professor",
       assignedTo: "Fry",
     },
-    {
-      id: 3,
-      title: "maintain space rover",
-      description: "Clean the wheels and check rover electonics",
-      createdBy: "Zap",
-      assignedTo: "Leela",
-    },
-    {
-      id: 4,
-      title: "maintain space rover",
-      description: "Clean the wheels and check rover electonics",
-      createdBy: "Bender",
-      assignedTo: "Zoidberg",
-    },
   ],
 };
 
@@ -50,6 +36,23 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         tasks: [],
+      };
+
+    case "UPDATE_TASK":
+      return {
+        ...state,
+        tasks: state.tasks.map((task) =>
+          task.id === action.payload.id
+            ? { ...task, ...action.payload.updatedTask }
+            : task
+        ),
+      };
+
+    case "GET_TASK_BY_ID":
+      const taskById = state.tasks.find((task) => task.id === action.payload);
+      return {
+        ...state,
+        selectedTask: taskById || null,
       };
 
     default:

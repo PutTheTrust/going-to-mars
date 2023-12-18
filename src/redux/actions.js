@@ -11,3 +11,16 @@ export const removeTask = (index) => ({
 export const deleteAllTasks = () => ({
   type: "REMOVE_ALL",
 });
+
+export const updateTask = (taskId, updatedTask) => ({
+  type: "UPDATE_TASK",
+  payload: {
+    id: taskId,
+    updatedTask: updatedTask,
+  },
+});
+
+export const getTaskById = (taskId) => ({
+  type: "GET_TASK_BY_ID",
+  payload: taskId,
+});
