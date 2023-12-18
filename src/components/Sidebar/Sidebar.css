@@ -18,14 +18,3 @@
 .sidebar__tasks {
   font-weight: 700;
 }
-
-.sidebar__btn {
-  background-color: #6c2305;
-  color: white;
-  border: none;
-
-  font-size: 20px;
-  height: 48px;
-  width: 100%;
-  /* margin-top: 1; */
-}

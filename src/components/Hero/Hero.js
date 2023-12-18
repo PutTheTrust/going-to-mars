@@ -4,24 +4,24 @@ import axios from "axios";
 import "./Hero.css";
 
 const Hero = () => {
-  const [heroImage, setHeroImage] = useState("");
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    const fetchImage = async () => {
-      setLoading(true);
+  //   const [heroImage, setHeroImage] = useState("");
+  //   const [loading, setLoading] = useState(false);
+  //   useEffect(() => {
+  //     const fetchImage = async () => {
+  //       setLoading(true);
 
-      try {
-        const result = axios.get("");
-        console.log(result);
-      } catch (e) {
-        console.log(e);
-      } finally {
-        setLoading(false);
-      }
-    };
+  //       try {
+  //         const result = axios.get("");
+  //         console.log(result);
+  //       } catch (e) {
+  //         console.log(e);
+  //       } finally {
+  //         setLoading(false);
+  //       }
+  //     };
 
-    fetchImage();
-  }, []);
+  //     fetchImage();
+  //   }, []);
   //   return <div>{!loading && <img src={heroImage} alt="hero" />}</div>;
   return (
     <div className="hero">

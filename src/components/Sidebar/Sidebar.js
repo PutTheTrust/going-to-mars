@@ -1,3 +1,4 @@
+import GMButton from "../GMButton/GMButton";
 import "./Sidebar.css";
 
 const Sidebar = () => {
@@ -10,7 +11,7 @@ const Sidebar = () => {
       <p className="sidebar__tasks">Number of tasks (25)</p>
 
       {/* TODO */}
-      <button className="sidebar__btn">Delete All Tasks</button>
+      <GMButton text="Delete All Tasks" />
     </aside>
   );
 };
