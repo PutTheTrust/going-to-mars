@@ -38,6 +38,7 @@ const Tasks = () => {
               <tr>
                 <td>ID</td>
                 <td>Title</td>
+                <td>Description</td>
                 <td>Creator</td>
                 <td>Asigned to</td>
                 <td>Actions</td>
@@ -48,6 +49,7 @@ const Tasks = () => {
                 <tr key={task.id}>
                   <td>{task.id}</td>
                   <td>{task.title}</td>
+                  <td>{task.description}</td>
                   <td>{task.createdBy}</td>
                   <td>{task.assignedTo}</td>
                   <td className="tasks__table-actions">
@@ -56,6 +58,7 @@ const Tasks = () => {
                       onClick={() => handleUpdateTask(task.id)}
                       image={editIcon}
                       colour={"green"}
+                      role="update"
                     />
                     <GMButton
                       text="delete"

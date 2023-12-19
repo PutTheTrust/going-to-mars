@@ -12,29 +12,27 @@ const UpdateModal = ({ setIsOpen, id }) => {
   const [description, setDescription] = useState("");
   const [creator, setCreator] = useState("");
   const [assigned, setAssigned] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const selectedTask = useSelector((state) => state.selectedTask);
 
   useEffect(() => {
     const fetchTask = async () => {
-      setLoading(true);
       await dispatch(getTaskById(id));
-      setLoading(false);
     };
 
     fetchTask();
   }, [dispatch, id]);
 
   useEffect(() => {
-    if (!loading && selectedTask) {
+    if (selectedTask) {
       setTitle(selectedTask.title);
       setCreator(selectedTask.createdBy);
       setAssigned(selectedTask.assignedTo);
       setDescription(selectedTask.description);
     }
-  }, [loading, selectedTask]);
+  }, [selectedTask]);
 
   const handleUpdateTask = () => {
     if (!title || !description || !creator || !assigned) {
@@ -55,7 +53,7 @@ const UpdateModal = ({ setIsOpen, id }) => {
   };
 
   return (
-    <div className="modal">
+    <div className="modal" data-testid="updateTask">
       <div className="modal__content">
         <div className="modal__content-btn">
           <button onClick={setIsOpen}>

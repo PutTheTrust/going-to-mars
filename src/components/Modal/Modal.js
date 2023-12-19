@@ -37,7 +37,7 @@ const Modal = ({ setIsOpen }) => {
   };
 
   return (
-    <div className="modal">
+    <div className="modal" data-testid="createTask">
       <div className="modal__content">
         <div className="modal__content-btn">
           <button onClick={setIsOpen}>

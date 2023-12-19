@@ -2,9 +2,10 @@ import React from "react";
 
 import "./GMButton.css";
 
-const GMButton = ({ text, onClick, image, colour }) => {
+const GMButton = ({ text, onClick, image, colour, role }) => {
   return (
     <button
+      aria-label={role}
       onClick={onClick}
       className="sidebar__btn"
       style={{ backgroundColor: colour }}
