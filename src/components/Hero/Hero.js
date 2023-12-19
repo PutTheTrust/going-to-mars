@@ -1,35 +1,30 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 
 import "./Hero.css";
 
 const Hero = () => {
-  //   const [heroImage, setHeroImage] = useState("");
-  //   const [loading, setLoading] = useState(false);
-  //   useEffect(() => {
-  //     const fetchImage = async () => {
-  //       setLoading(true);
+  const [heroImage, setHeroImage] = useState(null);
 
-  //       try {
-  //         const result = axios.get("");
-  //         console.log(result);
-  //       } catch (e) {
-  //         console.log(e);
-  //       } finally {
-  //         setLoading(false);
-  //       }
-  //     };
+  useEffect(() => {
+    const loadImage = async () => {
+      try {
+        const response = await fetch(
+          "https://source.unsplash.com/random/800x600/?mars"
+        );
+        const blob = await response.blob();
 
-  //     fetchImage();
-  //   }, []);
-  //   return <div>{!loading && <img src={heroImage} alt="hero" />}</div>;
+        const objectURL = URL.createObjectURL(blob);
+        setHeroImage(objectURL);
+      } catch (error) {
+        console.error("Error loading image:", error);
+      }
+    };
+
+    loadImage();
+  }, []);
   return (
     <div className="hero">
-      <img
-        className="hero__img"
-        src="https://source.unsplash.com/random/800x600/?mars"
-        alt="hero"
-      />
+      <img className="hero__img" src={heroImage} alt="hero" />
     </div>
   );
 };
