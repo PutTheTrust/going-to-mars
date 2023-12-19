@@ -24,3 +24,9 @@
   display: inline-flex;
   gap: 16px;
 }
+
+.tasks__empty {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+}
