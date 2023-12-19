@@ -34,13 +34,15 @@ const Modal = ({ setIsOpen }) => {
       })
     );
     setTmpId(tmpId + 1);
+
+    setIsOpen();
   };
 
   return (
     <div className="modal" data-testid="createTask">
       <div className="modal__content">
         <div className="modal__content-btn">
-          <button onClick={setIsOpen}>
+          <button data-testid="close-modal" onClick={setIsOpen}>
             <img src={close} alt="close" />
           </button>
         </div>

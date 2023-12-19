@@ -11,6 +11,7 @@ const GMInput = ({ name, title, value, setValue }) => {
       <input
         className="input__textField"
         name={name}
+        id={name}
         type="text"
         placeholder={title}
         value={value}

@@ -47,7 +47,7 @@ const Tasks = () => {
               </thead>
               <tbody>
                 {tasks.map((task) => (
-                  <tr key={task.id}>
+                  <tr key={task.id} data-testid={`task-${task.id}`}>
                     <td>{task.id}</td>
                     <td>{task.title}</td>
                     <td>{task.description}</td>
@@ -66,6 +66,7 @@ const Tasks = () => {
                         onClick={() => dispatch(removeTask(task.id))}
                         image={deleteIcon}
                         colour="red"
+                        id={`delete-${task.id}`}
                       />
                     </td>
                   </tr>

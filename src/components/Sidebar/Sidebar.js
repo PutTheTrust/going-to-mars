@@ -14,7 +14,9 @@ const Sidebar = () => {
       {/* TODO */}
       <p className="sidebar__tasks">Current use</p>
 
-      <p className="sidebar__tasks">Number of tasks ({tasks.length})</p>
+      <p data-testid="num-tasks" className="sidebar__tasks">
+        Number of tasks ({tasks.length})
+      </p>
 
       {/* TODO */}
       <GMButton

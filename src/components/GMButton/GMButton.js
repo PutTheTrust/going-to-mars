@@ -2,9 +2,10 @@ import React from "react";
 
 import "./GMButton.css";
 
-const GMButton = ({ text, onClick, image, colour, role }) => {
+const GMButton = ({ text, onClick, image, colour, role, id }) => {
   return (
     <button
+      data-testid={id}
       aria-label={role}
       onClick={onClick}
       className="sidebar__btn"
