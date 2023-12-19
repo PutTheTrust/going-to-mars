@@ -3,6 +3,7 @@
   --dark: #3e0401;
 }
 
+/* Reset css browser properties */
 * {
   margin: 0;
   padding: 0;

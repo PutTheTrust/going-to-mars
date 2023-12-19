@@ -12,7 +12,6 @@ const UpdateModal = ({ setIsOpen, id }) => {
   const [description, setDescription] = useState("");
   const [creator, setCreator] = useState("");
   const [assigned, setAssigned] = useState("");
-  // const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
   const selectedTask = useSelector((state) => state.selectedTask);

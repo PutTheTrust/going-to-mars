@@ -1,4 +1,6 @@
 // import { createStore } from "redux";
+
+// Above has been deprecated
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./reducers";
 

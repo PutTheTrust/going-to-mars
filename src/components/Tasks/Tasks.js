@@ -20,8 +20,11 @@ const Tasks = () => {
 
   const handleUpdateTask = (id) => {
     setIsUpdateOpen(true);
-    // console.log(id);
     setSelectedId(id);
+  };
+
+  const showTruncatedText = (text) => {
+    alert(text);
   };
 
   return (
@@ -50,7 +53,9 @@ const Tasks = () => {
                   <tr key={task.id} data-testid={`task-${task.id}`}>
                     <td>{task.id}</td>
                     <td>{task.title}</td>
-                    <td>{task.description}</td>
+                    <td onClick={() => showTruncatedText(task.description)}>
+                      {task.description}
+                    </td>
                     <td>{task.createdBy}</td>
                     <td>{task.assignedTo}</td>
                     <td className="tasks__table-actions">

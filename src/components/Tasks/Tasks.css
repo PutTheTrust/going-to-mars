@@ -1,27 +1,22 @@
 .tasks {
-  /* margin-left: 240px;
-  margin-top: 16px;
-  margin-bottom: 40px; */
-
   margin: 16px 20px 40px 240px;
 }
 
 .task__btnContainer {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .tasks__table {
   margin-top: 16px;
-  /* border-collapse: collapse; */
   table-layout: fixed;
   width: 100%;
-  /* border: 1px solid #ddd; */
   overflow: scroll;
 }
 
 .tasks__table-actions {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
   gap: 16px;
 }
 
@@ -29,4 +24,16 @@
   font-size: 28px;
   font-weight: 700;
   text-align: center;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
