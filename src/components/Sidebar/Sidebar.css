@@ -1,7 +1,6 @@
 .sidebar {
   position: fixed;
   inset: 0;
-  /* right: 0; */
   top: 80px;
   width: 220px;
   height: 100%;
@@ -11,10 +10,26 @@
   flex-direction: column;
   gap: 20px;
   padding: 16px;
-  /* color: white; */
   font-size: 20px;
 }
 
 .sidebar__tasks {
   font-weight: 700;
+}
+
+.sidebar__tasks-current {
+  margin-left: 12px;
+}
+
+.sidebar__tasks-current p {
+  font-size: 12px;
+  font-weight: 500;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+  border: 1px solid black;
+  margin-top: 5px;
+  padding-block: 5px;
 }

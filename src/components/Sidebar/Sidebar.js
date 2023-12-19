@@ -12,7 +12,14 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       {/* TODO */}
-      <p className="sidebar__tasks">Current use</p>
+      <div>
+        <p className="sidebar__tasks">Current use</p>
+        <div className="sidebar__tasks-current">
+          {tasks.map((task) => (
+            <p key={task.id}>{task.title}</p>
+          ))}
+        </div>
+      </div>
 
       <p data-testid="num-tasks" className="sidebar__tasks">
         Number of tasks ({tasks.length})
